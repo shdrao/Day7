@@ -13,8 +13,8 @@ public class Grep {
 		String lines = null;
 		String[] lineArray = null;
 		File file1 = new File(file);
-		try (FileReader reader = new FileReader(file1); BufferedReader br = new BufferedReader(reader)) {
-			while ((lines = br.readLine()) != null) {
+		try (FileReader reader = new FileReader(file1); BufferedReader bufferedreader = new BufferedReader(reader)) {
+			while ((lines = bufferedreader.readLine()) != null) {
 				lineArray = lines.split("\\s+");
 				for (String word : lineArray) {
 					if (word.toLowerCase().equals(key.toLowerCase())) {
